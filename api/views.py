@@ -18,7 +18,7 @@ class ProfileViewSet(viewsets.ModelViewSet):
         serializers.save(userProfile=self.request.user)
 
 
-class MyProfileListView(generics.ListAPIVIEW):
+class MyProfileListView(generics.ListAPIView):
     queryset = Profile.objects.all()
     serializer_class = serializers.ProfileSerializer
 
@@ -27,7 +27,7 @@ class MyProfileListView(generics.ListAPIVIEW):
 
 
 class PostViewSet(viewsets.ModelViewSet):
-    queryset = Post.object.all()
+    queryset = Post.objects.all()
     serializer_class = serializers.PostSerializer
 
     def perform_create(self, serializer):
