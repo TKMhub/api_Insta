@@ -12,10 +12,10 @@ class CreateUserView(generics.CreateAPIView):
 
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
-    serializers_classes = serializers.ProfileSerializer
+    serializer_class = serializers.ProfileSerializer
 
     def perform_create(self, serializer):
-        serializers.save(userProfile=self.request.user)
+        serializer.save(userProfile=self.request.user)
 
 
 class MyProfileListView(generics.ListAPIView):
