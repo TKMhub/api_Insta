@@ -39,4 +39,4 @@ class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.CommentSerializer
 
     def perform_create(self, serializer):
-        serializer.save(userCommit=self.request.user)
+        serializer.save(userComment=self.request.user)
